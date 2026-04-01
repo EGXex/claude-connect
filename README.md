@@ -8,7 +8,7 @@
 - **Conversations are sent to Anthropic:** All messages go through Claude's servers. Do not use sensitive or private topics.
 - **Conversation is logged:** Every turn is saved to `conversation.txt` in the CONNECT folder automatically.
 
----
+--- 
 
 ## 1. Folder Location
 
@@ -121,3 +121,8 @@ Each session runs in its own terminal window. They communicate through plain tex
 - Loops until you stop it
 
 The watcher uses PowerShell to focus the correct terminal window and robotjs to type `go` into it automatically.
+
+
+MY NOTE, i checked around a lot about what skills or what apps could be used to connect 2 claudes, could find only for "API - Pay Per Usage" wanted to make one that is mine AND works in PRO account
+i dont know any programming or coding at all so this was vibe coded.
+SORRY FOR BRUTEFORCING the manual method. i have no idea about what other methods are there :/
