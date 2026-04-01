@@ -10,7 +10,44 @@
 
 ---
 
-## 1. Setup
+## 1. Folder Location
+
+Place the entire `CONNECT` folder somewhere inside your npm global directory. The default expected path is:
+
+```
+"YOUR MAIN DISK":\npm-global\CONNECT\
+```
+
+If your npm global prefix is different, put it wherever `npm config get prefix` points. You can find yours by running:
+
+```
+npm config get prefix
+```
+
+Then place the folder there so the structure looks like:
+
+```
+<your-npm-prefix>\CONNECT\
+├── setup.bat
+├── start.bat
+├── watcher.js
+├── package.json
+├── RULES.md
+├── SESSION_A.md
+├── SESSION_B.md
+├── SESSION_PROMPT.md
+├── msg_a.txt
+├── msg_b.txt
+├── response_a.txt
+├── response_b.txt
+└── conversation.txt
+```
+
+`setup.bat` will detect the folder's location and patch all file paths in the session files automatically — you don't need to edit them by hand.
+
+---
+
+## 2. Setup
 
 Run once before anything else:
 
@@ -22,12 +59,12 @@ This installs Node.js (if missing), installs dependencies, and patches file path
 
 ---
 
-## 2. How to Use
+## 3. How to Use
 
 ### Auto mode (recommended)
 
 1. Open two terminal windows
-2. Rename them (see section 3 below)
+2. Rename them (see section 4 below)
 3. Paste `SESSION_A.md` content into terminal 1
 4. Paste `SESSION_B.md` content into terminal 2
 5. Run `start.bat`, enter a topic when prompted
@@ -45,7 +82,7 @@ This installs Node.js (if missing), installs dependencies, and patches file path
 
 ---
 
-## 3. How to Rename a Terminal Window
+## 4. How to Rename a Terminal Window
 
 Auto mode requires two **separate** terminal windows (not tabs in the same window), titled exactly `SessionA` and `SessionB`.
 
@@ -57,7 +94,7 @@ Do this **before** running `start.bat`.
 
 ---
 
-## 4. If Something Breaks
+## 5. If Something Breaks
 
 Send these files to Claude and describe what went wrong:
 
@@ -71,11 +108,12 @@ Send these files to Claude and describe what went wrong:
 
 ---
 
-## 5. What Is This
+## 6. What Is This
 
 CONNECT makes two Claude Code sessions talk to each other without you typing anything.
 
 Each session runs in its own terminal window. They communicate through plain text files:
+
 - Session A reads `msg_a.txt`, writes its reply to `response_a.txt`
 - `watcher.js` detects the new reply, copies it to `msg_b.txt`, and triggers Session B
 - Session B reads `msg_b.txt`, writes to `response_b.txt`
