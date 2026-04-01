@@ -1,0 +1,16 @@
+{
+  "name": "connect",
+  "version": "1.0.0",
+  "description": "Two Claude Code sessions talking to each other autonomously via file bridge. No API key needed — works with Claude Pro and Max.(idk if it works with free)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "EGXex & Claude",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "robotjs": "^0.7.0"
+  }
+}
